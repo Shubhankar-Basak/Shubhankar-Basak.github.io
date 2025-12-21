@@ -30,6 +30,14 @@ I enjoy building practical tools and interactive web applications. My journey in
 
 ---
 
+### 🤝 Connect with me:
+[![LinkedIn](https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/shubhankar-basak)
+[![Twitter](https://img.shields.io/badge/X-%23000000.svg?style=for-the-badge&logo=X&logoColor=white)](https://x.com/Shubhankar_in)
+[![Wikidata](https://img.shields.io/badge/Wikidata-%23006699.svg?style=for-the-badge&logo=wikidata&logoColor=white)](https://www.wikidata.org/wiki/Q137461805)
+[![Medium](https://img.shields.io/badge/Medium-12100E?style=for-the-badge&logo=medium&logoColor=white)](https://medium.com/@Shubhankar-Basak)
+
+---
+
 ### 📈 Profile Stats
 ![Visitors](https://komarev.com/ghpvc/?username=Shubhankar-Basak&color=blueviolet&style=flat-square&label=PROFILE+VIEWS)
 
