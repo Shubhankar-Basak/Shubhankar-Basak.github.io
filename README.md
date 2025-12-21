@@ -27,3 +27,10 @@ I enjoy building practical tools and interactive web applications. My journey in
 
 ## 📊 My GitHub Stats
 ![Shubhankar's Stats](https://github-readme-stats.vercel.app/api?username=Shubhankar-Basak&show_icons=true&theme=tokyonight)
+
+---
+
+### 📈 Profile Stats
+![Visitors](https://komarev.com/ghpvc/?username=Shubhankar-Basak&color=blueviolet&style=flat-square&label=PROFILE+VIEWS)
+
+---
