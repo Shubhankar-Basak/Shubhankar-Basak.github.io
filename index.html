@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shubhankar Basak | Web Developer</title>
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -35,15 +36,633 @@
   }
 }
 </script>
-</head>
-<body>
-    <h1>Shubhankar Basak</h1>
-    <p>Web Developer | Student at Assam University</p>
-    <p>Welcome to my official professional page.</p>
+    <style>
     
-    <ul>
-        <li><a href="https://github.com/Shubhankar-Basak">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/shubhankar-basak">LinkedIn</a></li>
-    </ul>
+     .skill-badge {
+    padding: 0.75rem 1.5rem;
+    border-radius: 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: white !important; /* Force white text */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, rgba(72, 204, 205, 0.15), rgba(168, 139, 235, 0.15)) !important;
+}
+
+.skill-badge:hover {
+    transform: translateY(-6px) scale(1.05);
+    box-shadow: 0 15px 30px rgba(72, 204, 205, 0.4);
+    border-color: #48CCCD;
+    color: white !important; /* Ensure text stays white on hover */
+}
+    
+        /* Custom CSS for the Gradient Name Effect */
+        @keyframes color-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .gradient-text {
+            /* Text Color properties */
+            background: linear-gradient(135deg, #FF6B6B, #48CCCD, #A88BEB, #F6D860);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Animation */
+            animation: color-shift 10s ease infinite;
+            display: inline-block; /* Essential for text styling */
+        }
+
+        /* Set base font to a clean sans-serif */
+        body {
+            font-family: 'Inter', 'Roboto', sans-serif;
+            background-color: #1A1A1A; /* Deep Charcoal Background */
+            color: #E0E0E0; /* Light text color */
+        }
+        
+        /* Sticky/Fixed Navbar Shadow */
+        .navbar {
+            backdrop-filter: blur(10px);
+            background-color: rgba(26, 26, 26, 0.85);
+        }
+
+        /* Section Padding/Margin */
+        section {
+            padding: 4rem 0;
+            min-height: 100vh;
+        }
+
+        /* Scrollbar styling for a cleaner look (optional, but modern) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #48CCCD;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #252525;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header id="home" class="navbar sticky top-0 z-50 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="#home" class="text-2xl font-bold text-[#48CCCD] hover:text-[#A88BEB] transition duration-300">
+                    Shubhankar Basak
+                </a>
+                
+                <nav class="hidden md:flex space-x-6 lg:space-x-10">
+                    <a href="#home" class="text-sm font-medium hover:text-[#48CCCD] transition duration-300">Home</a>
+                    <a href="#about" class="text-sm font-medium hover:text-[#48CCCD] transition duration-300">About</a>
+                    <a href="#skills" class="text-sm font-medium hover:text-[#48CCCD] transition duration-300">Skills</a>
+                    <a href="#projects" class="text-sm font-medium hover:text-[#48CCCD] transition duration-300">Projects</a>
+                    <a href="#testimonials" class="text-sm font-medium hover:text-[#48CCCD] transition duration-300">Testimonials</a>
+                    <a href="#contact" class="text-sm font-medium hover:text-[#48CCCD] transition duration-300">Contact</a>
+                </nav>
+                
+                <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-[#252525] text-[#48CCCD]">
+                    <i data-lucide="menu"></i>
+                </button>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden px-2 pt-2 pb-3 space-y-1 sm:px-3 shadow-xl">
+            <a href="#home" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#252525]">Home</a>
+            <a href="#about" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#252525]">About</a>
+            <a href="#skills" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#252525]">Skills</a>
+            <a href="#projects" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#252525]">Projects</a>
+            <a href="#testimonials" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#252525]">Testimonials</a>
+            <a href="#contact" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-[#252525]">Contact</a>
+        </div>
+    </header>
+
+    <section class="flex items-center justify-center pt-24 pb-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="hidden md:grid md:grid-cols-12 gap-8 items-center w-full">
+            <div class="md:col-span-7">
+                <p class="text-xl text-gray-400 mb-2">Hi, I am</p>
+                <h1 class="text-4xl lg:text-5xl font-extrabold leading-none tracking-tight mb-4">
+                    <span class="gradient-text uppercase">SHUBHANKAR BASAK</span>
+                </h1>
+                <p class="text-3xl text-[#48CCCD] font-semibold">Web Developer</p>
+                <a href="#contact" class="mt-8 inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-lg text-[#1A1A1A] bg-[#48CCCD] hover:bg-[#A88BEB] transition duration-300 transform hover:scale-105">
+                    Let's Connect <i data-lucide="send" class="ml-2 w-4 h-4"></i>
+                </a>
+            </div>
+            <div class="md:col-span-5 flex justify-center p-8">
+                <div class="w-72 h-72 lg:w-96 lg:h-96 bg-[#252525] rounded-full shadow-2xl flex items-center justify-center border-4 border-[#48CCCD] overflow-hidden">
+                    <img src="https://i.ibb.co/tpLPGBjp/prof-dp.png" alt="Professional Headshot" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden flex flex-col items-center text-center w-full">
+            <div class="w-48 h-48 bg-[#252525] rounded-full shadow-xl flex items-center justify-center border-4 border-[#48CCCD] mb-8 overflow-hidden">
+                <img src="https://i.ibb.co/tpLPGBjp/prof-dp.png" alt="Professional Headshot" class="w-full h-full object-cover">
+            </div>
+            
+            <p class="text-base text-gray-400 mb-6">Hi, I am</p>
+            
+            <h1 class="text-4xl font-extrabold leading-tight mb-2">
+                <span class="gradient-text uppercase">SHUBHANKAR BASAK</span>
+            </h1>
+
+            <p class="text-xl text-[#48CCCD] font-semibold mb-6">Web Developer</p>
+            
+            
+            <a href="#contact" class="inline-flex items-center justify-center px-5 py-2 border border-transparent text-sm font-medium rounded-full shadow-lg text-[#1A1A1A] bg-[#48CCCD] hover:bg-[#A88BEB] transition duration-300">
+                Let's Connect <i data-lucide="send" class="ml-2 w-4 h-4"></i>
+            </a>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto border-t border-[#252525]"></div>
+
+    <section id="about" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-12 text-[#A88BEB]">About Me</h2>
+    
+    <div class="max-w-4xl mx-auto text-lg leading-relaxed text-gray-300">
+        <p class="mb-6 font-semibold text-xl text-[#48CCCD]">Web Developer crafting digital excellence</p>
+
+        <p class="mb-6">
+            I transform complex challenges into <span class="text-[#48CCCD] font-semibold">elegant, high-performance solutions</span> using modern JavaScript and cutting-edge frameworks. My passion lies in building scalable applications that deliver exceptional user experiences.
+        </p>
+        
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+            <div class="text-center p-4 rounded-lg bg-[#252525] border-l-4 border-[#48CCCD]">
+                <h4 class="font-bold text-[#48CCCD] mb-2">Clean Code</h4>
+                <p class="text-sm">Meticulous architecture with test-driven development</p>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-[#252525] border-l-4 border-[#F6D860]">
+                <h4 class="font-bold text-[#F6D860] mb-2">Performance</h4>
+                <p class="text-sm">Lightning-fast, responsive digital experiences</p>
+            </div>
+            <div class="text-center p-4 rounded-lg bg-[#252525] border-l-4 border-[#A88BEB]">
+                <h4 class="font-bold text-[#A88BEB] mb-2">UX Focus</h4>
+                <p class="text-sm">Pixel-perfect designs with intuitive interactions</p>
+            </div>
+        </div>
+
+        <p class="text-center text-[#F6D860] font-semibold">
+            Let's build something amazing together.
+        </p>
+    </div>
+</section>
+
+    <div class="max-w-7xl mx-auto border-t border-[#252525]"></div>
+
+    <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-[#A88BEB]">Technical Expertise</h2>
+
+        <div class="max-w-5xl mx-auto">
+            
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-6 text-[#48CCCD] border-b border-[#252525] pb-2">Frontend Development</h3>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <span class="skill-badge bg-red-600">HTML5</span>
+                    <span class="skill-badge bg-blue-600">CSS3</span>
+                    <span class="skill-badge bg-yellow-600">JavaScript (ES6+)</span>
+                    <span class="skill-badge bg-cyan-600">React</span>
+                    <span class="skill-badge bg-green-600">Vue.js</span>
+                    <span class="skill-badge bg-teal-600">Tailwind CSS</span>
+                </div>
+            </div>
+
+            <div class="mb-10">
+                <h3 class="text-2xl font-semibold mb-6 text-[#48CCCD] border-b border-[#252525] pb-2">Backend & Databases</h3>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <span class="skill-badge bg-green-700">Node.js</span>
+                    <span class="skill-badge bg-gray-700">Express</span>
+                    <span class="skill-badge bg-yellow-800">Python (Flask/Django)</span>
+                    <span class="skill-badge bg-lime-700">MongoDB</span>
+                    <span class="skill-badge bg-blue-800">SQL</span>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-2xl font-semibold mb-6 text-[#48CCCD] border-b border-[#252525] pb-2">Tools & Other</h3>
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <span class="skill-badge bg-orange-700">Git/GitHub</span>
+                    <span class="skill-badge bg-sky-700">Docker</span>
+                    <span class="skill-badge bg-pink-700">Figma</span>
+                    <span class="skill-badge bg-blue-900">VS Code</span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <style>
+        .skill-badge {
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #1A1A1A;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        .skill-badge:hover {
+            transform: translateY(-2px) scale(1.05);
+        }
+    </style>
+
+    <div class="max-w-7xl mx-auto border-t border-[#252525]"></div>
+
+    <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <h2 class="text-4xl font-bold text-center mb-12 text-[#A88BEB]">My Work</h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Project 1 - Calculator -->
+        <div class="bg-[#252525] rounded-xl shadow-xl p-6 transition duration-300 hover:shadow-2xl hover:border-b-4 border-[#48CCCD] group">
+            <h3 class="text-2xl font-bold mb-3 text-[#48CCCD] group-hover:text-[#A88BEB]">Calculator</h3>
+            <p class="text-gray-400 mb-4">A fully functional and responsive calculator that handles basic arithmetic operations with accuracy and sleek design.</p>
+            <div class="flex flex-wrap gap-2 text-sm text-gray-500 mb-6">
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">HTML5</span>
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">Tailwind CSS</span>
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">JavaScript</span>
+            </div>
+            <div class="flex">
+                <button onclick="openCaseStudy('calculator')" class="view-project-btn">
+                    View Project
+                    <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Project 2 - Tic-Tac-Toe -->
+        <div class="bg-[#252525] rounded-xl shadow-xl p-6 transition duration-300 hover:shadow-2xl hover:border-b-4 border-[#48CCCD] group">
+            <h3 class="text-2xl font-bold mb-3 text-[#48CCCD] group-hover:text-[#A88BEB]">Tic-Tac-Toe Game</h3>
+            <p class="text-gray-400 mb-4">A fully playable two-player Tic-Tac-Toe game with intuitive interface and complete game logic implementation.</p>
+            <div class="flex flex-wrap gap-2 text-sm text-gray-500 mb-6">
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">HTML5</span>
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">CSS3</span>
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">JavaScript</span>
+            </div>
+            <div class="flex">
+                <button onclick="openCaseStudy('tictactoe')" class="view-project-btn">
+                    View Project
+                    <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Project 3 - Healthy Diet Guide -->
+        <div class="bg-[#252525] rounded-xl shadow-xl p-6 transition duration-300 hover:shadow-2xl hover:border-b-4 border-[#48CCCD] group">
+            <h3 class="text-2xl font-bold mb-3 text-[#48CCCD] group-hover:text-[#A88BEB]">Healthy Diet Guide</h3>
+            <p class="text-gray-400 mb-4">An informative website offering practical healthy eating tips and meal ideas with clean, user-friendly design.</p>
+            <div class="flex flex-wrap gap-2 text-sm text-gray-500 mb-6">
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">HTML5</span>
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">CSS3</span>
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">JavaScript</span>
+            </div>
+            <div class="flex">
+                <button onclick="openCaseStudy('dietguide')" class="view-project-btn">
+                    View Project
+                    <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Project 4 - Tools Hub -->
+        <div class="bg-[#252525] rounded-xl shadow-xl p-6 transition duration-300 hover:shadow-2xl hover:border-b-4 border-[#48CCCD] group">
+            <h3 class="text-2xl font-bold mb-3 text-[#48CCCD] group-hover:text-[#A88BEB]">Tools Hub</h3>
+            <p class="text-gray-400 mb-4">A central hub of useful interactive web tools demonstrating diverse JavaScript functionalities and API integrations.</p>
+            <div class="flex flex-wrap gap-2 text-sm text-gray-500 mb-6">
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">HTML5</span>
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">CSS3</span>
+                <span class="bg-[#3A3A3A] px-3 py-1 rounded-full">JavaScript</span>
+            </div>
+            <div class="flex">
+                <button onclick="openCaseStudy('toolshub')" class="view-project-btn">
+                    View Project
+                    <i data-lucide="arrow-up-right" class="ml-2 w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Case Study Modal -->
+<div id="caseStudyModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
+    <div class="bg-[#1A1A1A] rounded-2xl max-w-4xl w-full max-h-[90vh] overflow-y-auto border border-[#252525]">
+        <div class="p-8">
+            <!-- Header -->
+            <div class="flex justify-between items-start mb-8">
+                <h3 id="modalTitle" class="text-3xl font-bold text-[#48CCCD]"></h3>
+                <button onclick="closeCaseStudy()" class="text-gray-400 hover:text-white transition-colors">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <!-- Content Grid -->
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Left Column -->
+                <div class="space-y-6">
+                    <div class="bg-[#252525] p-6 rounded-xl border-l-4 border-[#48CCCD]">
+                        <h4 class="text-xl font-semibold text-[#A88BEB] mb-3">Goal</h4>
+                        <p id="modalGoal" class="text-gray-300 leading-relaxed"></p>
+                    </div>
+                    
+                    <div class="bg-[#252525] p-6 rounded-xl border-l-4 border-[#A88BEB]">
+                        <h4 class="text-xl font-semibold text-[#F6D860] mb-3">Technology</h4>
+                        <p id="modalTech" class="text-gray-300 leading-relaxed"></p>
+                    </div>
+                </div>
+                
+                <!-- Right Column -->
+                <div class="space-y-6">
+                    <div class="bg-[#252525] p-6 rounded-xl border-l-4 border-[#F6D860]">
+                        <h4 class="text-xl font-semibold text-[#48CCCD] mb-3">Challenges & Solution</h4>
+                        <p id="modalChallenges" class="text-gray-300 leading-relaxed"></p>
+                    </div>
+                    
+                    <div class="bg-[#252525] p-6 rounded-xl border-l-4 border-[#FF6B6B]">
+                        <h4 class="text-xl font-semibold text-[#FF6B6B] mb-3">Results</h4>
+                        <p id="modalResults" class="text-gray-300 leading-relaxed"></p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="flex mt-8 pt-6 border-t border-[#252525]">
+                <a id="modalLiveLink" href="#" target="_blank" class="w-full bg-gradient-to-r from-[#48CCCD] to-[#A88BEB] text-[#1A1A1A] font-semibold py-3 px-6 rounded-lg text-center transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#48CCCD]/30">
+                    View Live Demo
+                    <i data-lucide="external-link" class="ml-2 w-4 h-4 inline"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.view-project-btn {
+    background: linear-gradient(135deg, #FF6B6B, #48CCCD, #A88BEB, #F6D860);
+    background-size: 300% 300%;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    color: #1A1A1A;
+    transition: all 0.4s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    animation: gradientShift 4s ease infinite;
+}
+
+.view-project-btn:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 10px 25px rgba(72, 204, 205, 0.4);
+}
+
+.view-project-btn i {
+    transition: transform 0.3s ease;
+}
+
+.view-project-btn:hover i {
+    transform: translate(3px, -3px);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+</style>
+
+<script>
+// Project Data
+const projectData = {
+    calculator: {
+        title: "Calculator",
+        goal: "To build a fully functional and responsive calculator that handles basic arithmetic operations accurately and demonstrate proficiency in front-end development by applying HTML, CSS, and interactive JavaScript logic.",
+        tech: "HTML & CSS for the structure and styling, creating an intuitive and visually appealing user interface. JavaScript as the core technology, implementing the entire calculation logic and handling user input events.",
+        challenges: "Challenge: Accurately parsing and evaluating complex, multi-step expressions and handling edge cases like division by zero. Solution: Implemented a robust expression evaluation algorithm and specific logic to display an 'Error' message for invalid operations.",
+        results: "Successfully created a cross-browser compatible calculator with a sleek design and reliable functionality. The project serves as a strong portfolio piece, showcasing the ability to translate design into code and write clean, maintainable JavaScript.",
+        liveLink: "https://shubhankar-basak.github.io/calculator/"
+    },
+    tictactoe: {
+        title: "Tic-Tac-Toe Game",
+        goal: "To develop a fully playable, two-player version of Tic-Tac-Toe to solidify understanding of DOM manipulation and implement the core game logic for tracking moves, checking win conditions, and managing game state.",
+        tech: "HTML & CSS provided the game board layout and responsive styling for an engaging visual experience. JavaScript was essential for handling user clicks, updating the board, and running the complete game loop and logic.",
+        challenges: "Challenge: Creating an efficient algorithm to reliably check for all possible win combinations (rows, columns, diagonals) after every move. Solution: Designed a Game State array and a single, concise function that iterates through all win patterns to declare the winner or a draw.",
+        results: "Successfully created a fully functional and visually appealing web-based Tic-Tac-Toe game that is ready to play. This project clearly demonstrates proficiency in JavaScript event handling and fundamental application logic development.",
+        liveLink: "https://shubhankar-basak.github.io/tic-tac-toe/"
+    },
+    dietguide: {
+        title: "Healthy Diet Guide",
+        goal: "To build an informative and user-friendly website that offers practical healthy eating tips and meal ideas, and to practice creating a visually appealing layout and ensuring the content is easy to navigate and digest for users.",
+        tech: "HTML & CSS were used to structure the diet information pages and apply a clean, health-focused design theme. JavaScript was incorporated to add interactive elements and enhance user experience.",
+        challenges: "Challenge: Organizing a large amount of diet and nutritional information into clear, easily navigable sections without overwhelming the user. Solution: Implemented a responsive navigation bar and used CSS Flexbox/Grid to create distinct, clean content blocks for different diet topics.",
+        results: "Successfully launched a polished and mobile-responsive resource that guides users toward healthier eating habits. The project demonstrates the ability to manage content, focus on user experience, and apply modern web design principles.",
+        liveLink: "https://shubhankar-basak.github.io/healthydiet/"
+    },
+    toolshub: {
+        title: "Tools Hub",
+        goal: "To build a central hub of useful, interactive web tools to demonstrate mastery of diverse JavaScript functionalities and practice integrating third-party libraries and APIs into a cohesive user interface.",
+        tech: "HTML & CSS provided the foundation and a clean, tabbed interface to organize the numerous distinct tools effectively. JavaScript was the primary language, implementing all complex logic for functions like image manipulation and currency conversion.",
+        challenges: "Challenge: Managing the state and dependencies of eight different tools within a single-page application structure without code conflicts. Solution: Used modular JavaScript architecture to encapsulate the logic for each tool, ensuring maintainability and easy scalability.",
+        results: "Successfully launched a highly functional website featuring practical and reliable utility tools for everyday use. This project is a strong demonstration of advanced problem-solving, code organization, and complex DOM manipulation skills.",
+        liveLink: "https://shubhankar-basak.github.io/tools/"
+    }
+};
+
+// Modal Functions
+function openCaseStudy(projectId) {
+    const project = projectData[projectId];
+    if (!project) return;
+    
+    // Populate modal content
+    document.getElementById('modalTitle').textContent = project.title;
+    document.getElementById('modalGoal').textContent = project.goal;
+    document.getElementById('modalTech').textContent = project.tech;
+    document.getElementById('modalChallenges').innerHTML = project.challenges;
+    document.getElementById('modalResults').textContent = project.results;
+    document.getElementById('modalLiveLink').href = project.liveLink;
+    
+    // Show modal
+    document.getElementById('caseStudyModal').classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+    
+    // Refresh icons
+    lucide.createIcons();
+}
+
+function closeCaseStudy() {
+    document.getElementById('caseStudyModal').classList.add('hidden');
+    document.body.style.overflow = 'auto';
+}
+
+// Close modal on ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        if (e.key === 'Escape') closeCaseStudy();
+    }
+});
+
+// Close modal when clicking outside content
+document.getElementById('caseStudyModal').addEventListener('click', (e) => {
+    if (e.target.id === 'caseStudyModal') closeCaseStudy();
+});
+</script>
+
+<div class="max-w-7xl mx-auto border-t border-[#252525]"></div>
+
+    <section id="testimonials" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-4xl font-bold text-center mb-12 text-[#A88BEB]">What Others Say</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Testimonial 1 - Female professional -->
+<div class="bg-[#252525] p-6 rounded-xl shadow-lg border-t-4 border-[#48CCCD] group">
+    <p class="text-2xl text-[#48CCCD] mb-4">"</p>
+    <p class="italic text-gray-300 mb-4">"Shubhankar's dedication to clean code and performance is unmatched. His E-Commerce Redesign project significantly boosted our mobile conversion rates."</p>
+    <div class="flex items-center">
+        <div class="w-12 h-12 rounded-full mr-4 overflow-hidden border-2 border-[#48CCCD]">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80" 
+                 alt="Jane Doe" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div>
+            <p class="font-semibold text-white">Jane Doe</p>
+            <p class="text-sm text-gray-400">Senior PM</p>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial 2 - Male professional -->
+<div class="bg-[#252525] p-6 rounded-xl shadow-lg border-t-4 border-[#A88BEB] group">
+    <p class="text-2xl text-[#A88BEB] mb-4">"</p>
+    <p class="italic text-gray-300 mb-4">"A true professional. He seamlessly integrated the React components and delivered ahead of schedule. Highly recommended for complex frontend work."</p>
+    <div class="flex items-center">
+        <div class="w-12 h-12 rounded-full mr-4 overflow-hidden border-2 border-[#A88BEB]">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80" 
+                 alt="Alex Chen" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div>
+            <p class="font-semibold text-white">Alex Chen</p>
+            <p class="text-sm text-gray-400">CTO, Tech Solutions Inc.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Testimonial 3 - Male designer -->
+<div class="bg-[#252525] p-6 rounded-xl shadow-lg border-t-4 border-[#F6D860] group">
+    <p class="text-2xl text-[#F6D860] mb-4">"</p>
+    <p class="italic text-gray-300 mb-4">"His passion for user experience shines through in every detail. The application he built has been cited as a model for our internal design team."</p>
+    <div class="flex items-center">
+        <div class="w-12 h-12 rounded-full mr-4 overflow-hidden border-2 border-[#F6D860]">
+            <img src="https://images.unsplash.com/photo-1519345182560-3f2917c472ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100&q=80" 
+                 alt="Mark Wilson" 
+                 class="w-full h-full object-cover">
+        </div>
+        <div>
+            <p class="font-semibold text-white">Mark Wilson</p>
+            <p class="text-sm text-gray-400">Lead UX Designer</p>
+        </div>
+    </div>
+        </div>
+    </section>
+
+    <div class="max-w-7xl mx-auto border-t border-[#252525]"></div>
+
+    <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-24 min-h-0">
+        <h2 class="text-4xl font-bold text-center mb-12 text-[#A88BEB]">Get In Touch</h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="bg-[#252525] p-8 rounded-xl shadow-2xl">
+                <h3 class="text-2xl font-semibold mb-6 text-[#48CCCD]">Send a Message</h3>
+                <form action="mailto:shubhankarpc4@gmail.com" method="GET" enctype="text/plain" class="space-y-4">
+                    <input type="text" placeholder="Your Name" required class="w-full bg-[#1A1A1A] text-white border border-[#3A3A3A] p-3 rounded-lg focus:ring-2 focus:ring-[#48CCCD] focus:border-transparent transition">
+                    <input type="email" placeholder="Your Email" required class="w-full bg-[#1A1A1A] text-white border border-[#3A3A3A] p-3 rounded-lg focus:ring-2 focus:ring-[#48CCCD] focus:border-transparent transition">
+                    <textarea rows="5" placeholder="Your Message" required class="w-full bg-[#1A1A1A] text-white border border-[#3A3A3A] p-3 rounded-lg focus:ring-2 focus:ring-[#48CCCD] focus:border-transparent transition"></textarea>
+                    <button type="submit" class="w-full bg-[#48CCCD] text-[#1A1A1A] font-bold py-3 rounded-lg hover:bg-[#A88BEB] transition duration-300 transform hover:scale-[1.01] shadow-md">
+                        Send Message</i>
+                    </button>
+                </form>
+            </div>
+
+            <div class="lg:pt-8">
+
+                <h3 class="text-2xl font-semibold mb-6 text-[#48CCCD]">Connect</h3>
+<div class="flex space-x-6">
+    <!-- GitHub -->
+    <a href="https://github.com/Shubhankar-Basak" target="_blank" class="social-icon group">
+        <div class="p-2 rounded-full bg-[#252525] transition-all duration-300 group-hover:scale-110 relative">
+            <img src="https://cdn-icons-png.flaticon.com/128/2111/2111432.png" 
+                 alt="GitHub" 
+                 class="w-8 h-8 rounded-full filter invert brightness-0 group-hover:brightness-100">
+            <div class="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-[#48CCCD] transition-all duration-300"></div>
+        </div>
+    </a>
+    
+    <!-- LinkedIn -->
+    <a href="https://www.linkedin.com/in/shubhankar-basak" target="_blank" class="social-icon group">
+        <div class="p-2 rounded-full bg-[#252525] transition-all duration-300 group-hover:scale-110 relative">
+            <img src="https://cdn-icons-png.flaticon.com/128/4494/4494497.png" 
+                 alt="LinkedIn" 
+                 class="w-8 h-8 rounded-full">
+            <div class="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-[#48CCCD] transition-all duration-300"></div>
+        </div>
+    </a>
+    
+    <!-- Twitter -->
+    <a href="https://x.com/Shubhankar_in" target="_blank" class="social-icon group">
+        <div class="p-2 rounded-full bg-[#252525] transition-all duration-300 group-hover:scale-110 relative">
+            <img src="https://cdn-icons-png.flaticon.com/128/5969/5969020.png" 
+                 alt="Twitter" 
+                 class="w-8 h-8 rounded-full">
+            <div class="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-[#48CCCD] transition-all duration-300"></div>
+        </div>
+    </a>
+    
+    <!-- Email -->
+    <a href="mailto:shubhankarpc4@gmail.com" class="social-icon group">
+        <div class="p-2 rounded-full bg-[#252525] transition-all duration-300 group-hover:scale-110 relative">
+            <img src="https://cdn-icons-png.flaticon.com/128/3178/3178158.png" 
+                 alt="Email" 
+                 class="w-8 h-8 rounded-full filter invert brightness-0 group-hover:brightness-100">
+            <div class="absolute inset-0 rounded-full border-2 border-transparent group-hover:border-[#48CCCD] transition-all duration-300"></div>
+        </div>
+    </a>
+</div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-6 border-t border-[#252525] text-sm text-gray-500">
+        &copy; 2025 Shubhankar Basak. All rights reserved.
+    </footer>
+
+    <script>
+        // Lucide Icon Rendering (Must be at the end of the body)
+        lucide.createIcons();
+
+        // Mobile Menu Toggle Logic
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click (for smooth scrolling)
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
 </body>
 </html>
