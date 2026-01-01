@@ -624,6 +624,31 @@ nav {
 .sidebar a:hover i {
     color: var(--primary-blue);
 }
+/* Hide mobile social icons on desktop */
+.mobile-social-icons {
+    display: none;
+    margin-top: 40px;
+    gap: 30px;
+}
+
+/* Show and style social icons only in mobile menu */
+@media (max-width: 768px) {
+    .mobile-social-icons {
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile-social-icons a {
+        font-size: 1.8rem;
+        color: var(--text-gray);
+        transition: color 0.3s, transform 0.3s;
+    }
+
+    .mobile-social-icons a:hover {
+        color: var(--primary-blue);
+        transform: scale(1.2);
+    }
+}        
     </style>
 </head>
 <body>
@@ -644,6 +669,19 @@ nav {
         <a href="#project">Project</a>
         <a href="#testimonials">Testimonials</a>
         <a href="#contact">Contact</a>
+
+        <!-- Social Icons in Mobile Menu Only -->
+    <div class="mobile-social-icons">
+        <a href="https://github.com/Shubhankar-Basak" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/shubhankar-basak" target="_blank" rel="noopener">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="https://x.com/Shubhankar_in" target="_blank" rel="noopener">
+            <i class="fab fa-x-twitter"></i>
+        </a>
+    </div>
     </div>
 </nav>
 
