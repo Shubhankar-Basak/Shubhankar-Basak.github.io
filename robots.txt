@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shubhankar-basak.github.io/sitemap.xml
