@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubhankar Basak - About Me | Web Developer & Computer Science Student from Assam</title>
+    <meta name="description" content="Learn more about Shubhankar Basak, a passionate Web Developer and Computer Science student at Assam University. Specializing in React, MERN stack, open-source contributions, and SEO-friendly web solutions.">
+    
+    <link rel="canonical" href="https://shubhankar-basak.github.io/about.html">
+
+    <meta name="robots" content="index, follow">
+    
+    <link rel="icon" href="/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    
+    <meta property="og:title" content="About Shubhankar Basak - Web Developer from Assam">
+    <meta property="og:description" content="Detailed profile of Shubhankar Basak: education at Assam University, projects, open-source work, and vision for inclusive tech in Northeast India.">
+    <meta property="og:image" content="https://github.com/Shubhankar-Basak.png">
+    <meta property="og:url" content="https://shubhankar-basak.github.io/about.html">
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Shubhankar Basak Portfolio">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Shubhankar Basak">
+    <meta name="twitter:description" content="Web developer, CS student at Assam University, open-source contributor. Based in Assam.">
+    <meta name="twitter:image" content="https://github.com/Shubhankar-Basak.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-color: #080808;
+            --primary-blue: #00acee;
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+            --secondary-bg: #111111;
+        }
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; scroll-behavior:smooth; }
+        html { scroll-padding-top:90px; }
+        body { background:var(--bg-color); color:var(--text-white); overflow-x:hidden; }
+
+        .bg-accent {
+            position:fixed; bottom:0; right:0; width:50%; height:80%;
+        }
+
+        /* ── NAVIGATION ── */
+        nav {
+            position:fixed; top:0; left:0; width:100%;
+            background:rgba(8,8,8,0.85); backdrop-filter:blur(10px);
+            z-index:1000; padding:20px 5%;
+            display:flex; justify-content:center; align-items:center;
+        }
+
+        .nav-links {
+            display:flex; gap:28px; list-style:none;
+        }
+        .nav-links a {
+            color:var(--text-white); text-decoration:none;
+            font-size:0.9rem; text-transform:uppercase; letter-spacing:1px;
+            transition:0.3s; border-bottom:2px solid transparent;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color:var(--primary-blue);
+            border-bottom:2px solid var(--primary-blue);
+            padding-bottom:4px;
+        }
+
+        /* Hamburger (only mobile) */
+        .menu-toggle {
+            display:none;
+            flex-direction:column; gap:6px; cursor:pointer;
+            z-index:1002;
+        }
+        .bar {
+            width:28px; height:3px; background:var(--text-white);
+            border-radius:2px; transition:0.4s;
+        }
+
+        /* ── MOBILE MENU ── */
+        @media (max-width:768px) {
+            .menu-toggle { display:flex; }
+            .nav-links {
+                position:fixed; top:0; right:-100%;
+                width:80%; height:100vh;
+                background:rgba(8,8,8,0.98); backdrop-filter:blur(12px);
+                flex-direction:column; align-items:center; justify-content:center;
+                gap:32px; transition:right 0.45s ease;
+                padding:80px 20px;
+            }
+            .nav-links.active { right:0; }
+
+            .menu-toggle.active .bar:nth-child(1) { transform:translateY(10px) rotate(45deg); }
+            .menu-toggle.active .bar:nth-child(2) { opacity:0; }
+            .menu-toggle.active .bar:nth-child(3) { transform:translateY(-10px) rotate(-45deg); }
+
+            /* Social icons below menu links on mobile */
+            .mobile-social {
+                margin-top:60px; display:flex; gap:40px;
+            }
+            .mobile-social a {
+                color:var(--text-gray); font-size:1.9rem;
+                transition:0.3s;
+            }
+            .mobile-social a:hover { color:var(--primary-blue); transform:scale(1.15); }
+        }
+
+        /* ── DESKTOP: hide social icons ── */
+        @media (min-width:769px) {
+            .mobile-social { display:none; }
+        }
+
+        /* ── OTHER STYLES (unchanged from previous) ── */
+        section#home { min-height:100vh; padding:140px 10% 80px 12%; display:flex; align-items:center; justify-content:space-between; }
+        .hero-text { max-width:620px; }
+        .hero-text h3 { font-size:26px; font-weight:700; }
+        .hero-text h3 span, .hero-text h1 span { color:var(--primary-blue); }
+        .hero-text h1 { font-size:52px; font-weight:700; margin:-4px 0 12px; }
+        .hero-text p { color:var(--text-gray); line-height:1.7; margin-bottom:35px; font-size:1rem; }
+        .btn-group { display:flex; gap:24px; }
+        .btn {
+            padding:13px 32px; border-radius:6px; text-decoration:none;
+            font-weight:600; transition:0.3s; font-size:0.95rem;
+        }
+        .btn-fill { background:var(--primary-blue); color:#000; border:1px solid var(--primary-blue); }
+        .btn-outline { background:transparent; color:var(--primary-blue); border:1px solid var(--primary-blue); }
+        .btn:hover { transform:translateY(-3px); box-shadow:0 6px 18px rgba(0,172,238,0.35); }
+
+        .profile-container {
+            position:relative; width:380px; height:380px;
+            display:flex; justify-content:center; align-items:center;
+        }
+        .image-ring {
+            width:300px; height:300px; border-radius:50%;
+            border:8px solid white; overflow:hidden; z-index:2;
+            box-shadow:0 0 40px var(--primary-blue), inset 0 0 40px var(--primary-blue);
+        }
+        .image-ring img { width:100%; height:100%; object-fit:cover; }
+        .shape-bg {
+            position:absolute; width:360px; height:360px;
+            background:#252525; border-radius:50%; z-index:1;
+        }
+
+        .about-row {
+            display:flex; align-items:center; gap:60px;
+            padding:100px 10%; min-height:auto;
+        }
+        .about-row.reverse { flex-direction:row-reverse; background:var(--secondary-bg); }
+        .text-box { flex:1; }
+        .text-box h2 { font-size:2.2rem; color:var(--primary-blue); margin-bottom:20px; }
+        .text-box p { color:var(--text-gray); font-size:1rem; line-height:1.7; }
+
+        .facts-section { padding:100px 10%; text-align:center; }
+        .bio-table {
+            margin:40px auto; border-collapse:collapse;
+            width:100%; max-width:720px;
+        }
+        .bio-table td {
+            padding:18px 24px; border-bottom:1px solid #222;
+            text-align:left;
+        }
+        .bio-table td:first-child {
+            font-weight:600; color:var(--primary-blue); width:38%;
+        }
+
+        footer {
+            padding:50px 10%; border-top:1px solid #1a1a1a;
+            text-align:center; color:var(--text-gray);
+        }
+
+        @media (max-width:992px) {
+            section#home, .about-row, .about-row.reverse {
+                flex-direction:column; text-align:center;
+                padding:100px 6% 60px;
+            }
+            .profile-container { margin:0 auto 50px; }
+            .btn-group { justify-content:center; }
+        }
+
+        ::-webkit-scrollbar { width:8px; }
+        ::-webkit-scrollbar-track { background:#080808; }
+        ::-webkit-scrollbar-thumb { background:var(--primary-blue); border-radius:10px; }
+        ::selection { background:var(--primary-blue); color:#000; }
+    </style>
+</head>
+<body>
+
+    <div class="bg-accent"></div>
+
+    <nav>
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about" class="active">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#project">Project</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+
+            <!-- Social icons - only visible in mobile menu -->
+            <div class="mobile-social">
+                <a href="https://github.com/Shubhankar-Basak" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/shubhankar-basak" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://x.com/Shubhankar_in" target="_blank"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About - 6 sections + facts (same as before) -->
+    <section id="about">
+        <div class="about-row">
+            <div class="profile-container">
+                <div class="shape-bg"></div>
+                <div class="image-ring">
+                    <img src="https://i.ibb.co/DDdjWm49/Shubhankar-Basak.jpg" alt="Shubhankar Basak">
+                </div>
+            </div>
+            <div class="text-box">
+                <h2>The Spark: From Curiosity to Code</h2>
+                <p>Born on April 20, 2006, in Sribhumi (Karimganj), Assam, Shubhankar Basak represents a generation of developers who view the internet not just as a tool, but as a canvas for innovation. His journey began in the aftermath of his Higher Secondary education, where a natural inquisitiveness regarding web architecture sparked a transition from a casual user to a technical architect. This period of self-directed study laid the foundation for his expertise in modern web ecosystems.</p>
+            </div>
+        </div>
+
+        <div class="about-row reverse">
+            <div class="profile-container">
+                <div class="shape-bg"></div>
+                <div class="image-ring">
+                    <img src="https://github.com/Shubhankar-Basak.png" alt="Shubhankar Basak">
+                </div>
+            </div>
+            <div class="text-box">
+                <h2>Academic Rigor at Assam University</h2>
+                <p>Shubhankar is currently a Computer Science scholar at Assam University. His academic path is characterized by a "theory-to-practice" philosophy. While mastering the fundamentals of algorithms and data structures, he simultaneously applies these concepts to real-world software. This dual approach has allowed him to excel within the 2024–2028 batch, positioning him as a leading technical voice among his peers in the Northeast Indian tech circuit.</p>
+            </div>
+        </div>
+
+        <div class="about-row">
+            <div class="profile-container">
+                <div class="shape-bg"></div>
+                <div class="image-ring">
+                    <img src="https://i.ibb.co/DDdjWm49/Shubhankar-Basak.jpg" alt="Shubhankar Basak">
+                </div>
+            </div>
+            <div class="text-box">
+                <h2>Community Leadership & Global Ecosystems</h2>
+                <p>A significant pillar of Shubhankar’s professional identity is his involvement with GDG (Google Developer Group) NIT Silchar. By participating in this high-level ecosystem, he contributes to open-source discussions and stays ahead of the curve regarding Google’s evolving web standards. His candidacy for the Microsoft Learn Student Ambassador (MLSA) program further underscores his commitment to mentorship and his role as a bridge between global tech giants and local student communities.</p>
+            </div>
+        </div>
+
+        <div class="about-row reverse">
+            <div class="profile-container">
+                <div class="shape-bg"></div>
+                <div class="image-ring">
+                    <img src="https://github.com/Shubhankar-Basak.png" alt="Shubhankar Basak">
+                </div>
+            </div>
+            <div class="text-box">
+                <h2>Technical Mastery: The MERN Stack & Beyond</h2>
+                <p>As a specialist in Full-Stack Development, Shubhankar has mastered a diverse tech stack designed for scalability. His core competencies involve React.js for interactive frontends and Node.js for robust backend logic. Beyond mere coding, he is a strategist in Search Engine Optimization (SEO) and Metadata Management, ensuring that digital products are not only functional but also highly discoverable in a crowded global marketplace.</p>
+            </div>
+        </div>
+
+        <div class="about-row">
+            <div class="profile-container">
+                <div class="shape-bg"></div>
+                <div class="image-ring">
+                    <img src="https://i.ibb.co/DDdjWm49/Shubhankar-Basak.jpg" alt="Shubhankar Basak">
+                </div>
+            </div>
+            <div class="text-box">
+                <h2>A Portfolio of Impactful Utility</h2>
+                <p>Shubhankar’s portfolio is a testament to "Utility-First" engineering. Notable projects include a high-speed QR Code Scanner, a logic-based NotesApp, and a comprehensive Healthy-diet Guide. Each project is a case study in clean UI/UX, leveraging Figma for design and GitHub for version control. His work is defined by a commitment to solving everyday problems through elegant, lightweight digital solutions.</p>
+            </div>
+        </div>
+
+        <div class="about-row reverse">
+            <div class="profile-container">
+                <div class="shape-bg"></div>
+                <div class="image-ring">
+                    <img src="https://github.com/Shubhankar-Basak.png" alt="Shubhankar Basak">
+                </div>
+            </div>
+            <div class="text-box">
+                <h2>Vision for the Digital Frontier</h2>
+                <p>Looking toward the future, Shubhankar Basak is dedicated to leveraging technology as a medium for social and economic elevation. With a vision that transcends simple web development, he aims to innovate within the realms of AI integration and Accessible Web Standards. As he continues to write the code that defines his career, his focus remains steadfast: creating a digital landscape that is more inclusive, efficient, and inspiring for the next generation of innovators.</p>
+            </div>
+        </div>
+
+        <div class="facts-section">
+            <h2>Professional Quick Facts</h2>
+            <table class="bio-table">
+                <tr><td>Full Name</td><td>Shubhankar Basak</td></tr>
+                <tr><td>Born</td><td>April 20, 2006 (Age 19)</td></tr>
+                <tr><td>Occupation</td><td>Web Developer</td></tr>
+                <tr><td>Education</td><td>Assam University (B.Sc. Computer Science, 2024–2028)</td></tr>
+                <tr><td>Location</td><td>Karimganj, Assam, India</td></tr>
+                <tr><td>Height</td><td>175 cm</td></tr>
+            </table>
+        </div>
+    </section>
+
+    <footer style="padding: 20px 10%; border-top: 1px solid #1a1a1a; text-align: center;">
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div style="color: var(--text-gray); font-size: 0.85rem;">
+            <p>&copy; 2026 <a href="https://shubhankar-basak.github.io/" style="color: var(--primary-blue); font-weight: 600; text-decoration: none;">Shubhankar Basak</a>. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        // Active link highlight
+        const navLinks = document.querySelectorAll('.nav-links a');
+        window.addEventListener('scroll', () => {
+            let current = "";
+            document.querySelectorAll('section').forEach(sec => {
+                if (pageYOffset >= sec.offsetTop - 160) current = sec.id;
+            });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) link.classList.add('active');
+            });
+        });
+
+        // Hamburger toggle
+        const menuToggle = document.querySelector('#mobile-menu');
+        const navContainer = document.querySelector('.nav-links');
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navContainer.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navContainer.classList.remove('active');
+            });
+        });
+
+        // Fade-in for about rows
+        const obs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.style.opacity = "1";
+                    e.target.style.transform = "translateY(0)";
+                }
+            });
+        }, { threshold: 0.18 });
+
+        document.querySelectorAll('.about-row').forEach(r => {
+            r.style.opacity = "0";
+            r.style.transform = "translateY(60px)";
+            r.style.transition = "all 1s ease-out";
+            obs.observe(r);
+        });
+    </script>
+</body>
+</html>
