@@ -1,0 +1,153 @@
+:root {
+            --bg-color: #080808;
+            --primary-blue: #00acee;
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+            --secondary-bg: #111111;
+            --border-color: #222;
+            --error-red: #ff4d4d; /* Added missing variable */
+        }
+
+        * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; scroll-behavior:smooth; }
+        body { background:var(--bg-color); color:var(--text-white); overflow-x:hidden; }
+
+        /* ── NAVIGATION ── */ 
+        nav {
+            position:fixed; top:0; left:0; width:100%;
+            background:rgba(8,8,8,0.85); backdrop-filter:blur(10px);
+            z-index:1000; padding:20px 5%;
+            display:flex; justify-content:center; align-items:center;
+        }
+
+        .nav-links { display:flex; gap:28px; list-style:none; }
+        .nav-links a {
+            color:var(--text-white); text-decoration:none;
+            font-size:0.9rem; text-transform:uppercase; letter-spacing:1px;
+            transition:0.3s; border-bottom:2px solid transparent;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color:var(--primary-blue);
+            border-bottom:2px solid var(--primary-blue);
+            padding-bottom:4px;
+        }
+
+        /* ── MOBILE MENU ── */
+        .menu-toggle { display:none; flex-direction:column; gap:6px; cursor:pointer; z-index:1002; }
+        .bar { width:28px; height:3px; background:var(--text-white); border-radius:2px; transition:0.4s; }
+
+        @media (max-width:768px) {
+            .menu-toggle { display:flex; }
+            .nav-links {
+                position:fixed; top:0; right:-100%; width:80%; height:100vh;
+                background:rgba(8,8,8,0.98); backdrop-filter:blur(12px);
+                flex-direction:column; align-items:center; justify-content:center;
+                gap:32px; transition:right 0.45s ease;
+            }
+            .nav-links.active { right:0; }
+            .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
+            .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+            .mobile-social { margin-top:60px; display:flex; gap:40px; }
+            .mobile-social a { color:var(--text-gray); font-size:1.9rem; transition:0.3s; }
+            .mobile-social a:hover { color:var(--primary-blue); transform:scale(1.15); }
+        }
+
+        @media (min-width:769px) { .mobile-social { display:none; } }
+
+        /* ── HERO & GRID ── */
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        .contact-hero { text-align: center; padding: 140px 0 60px; }
+        .contact-hero h1 { font-size: 3rem; font-weight: 700; margin-bottom: 15px; }
+        .contact-hero h1 span { color: var(--primary-blue); }
+        .contact-hero p { color: var(--text-gray); font-size: 1.1rem; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+
+        .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 80px; }
+
+        .contact-info, .contact-form-card {
+            background: var(--secondary-bg);
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .contact-info:hover, .contact-form-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 10px 30px rgba(0, 172, 238, 0.15);
+        }
+
+        h2 { font-size: 1.6rem; color: var(--primary-blue); margin-bottom: 25px; }
+
+        /* ── INFO ITEMS ── */
+        .info-item { margin-bottom: 25px; }
+        .info-item strong { display: block; color: var(--text-white); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; }
+        .info-item a, .info-item span { color: var(--text-gray); text-decoration: none; font-size: 1.05rem; transition: 0.3s; }
+        .info-item a:hover { color: var(--primary-blue); }
+
+        /* ── FORM ELEMENTS ── */
+        .form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+        .form-group label { font-size: 0.85rem; color: var(--primary-blue); }
+        
+        form input, form textarea {
+            padding: 14px;
+            border: 1px solid #333;
+            border-radius: 6px;
+            background: #1a1a1a;
+            color: var(--text-white);
+            font-size: 0.95rem;
+            width: 100%;
+            outline: none;
+            transition: 0.3s;
+        }
+        form input:focus, form textarea:focus { border-color: var(--primary-blue); box-shadow: 0 0 10px rgba(0, 172, 238, 0.1); }
+        form textarea { resize: none; }
+
+        .btn {
+            background: var(--primary-blue);
+            color: #000;
+            border: none;
+            padding: 14px 30px;
+            font-size: 1rem;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0, 172, 238, 0.3); }
+
+.cv-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: var(--primary-blue);
+    color: #000;
+    border: 2px solid var(--primary-blue);
+    padding: 12px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
+}
+
+.cv-btn:hover {
+    background: var(--primary-blue);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 172, 238, 0.4);
+}
+
+        /* ── STATUS MESSAGE ── */
+        #form-status { text-align: center; font-size: 0.9rem; margin-top: 15px; min-height: 1.2em; }
+
+        @media (max-width: 850px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .contact-hero h1 { font-size: 2.4rem; }
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #080808; }
+        ::-webkit-scrollbar-thumb { background: var(--primary-blue); border-radius: 10px; }
+        ::selection { background:var(--primary-blue); color:#000; }
