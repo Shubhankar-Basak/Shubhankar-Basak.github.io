@@ -406,41 +406,32 @@
         </div>
     </section>
     
-    <section id="contact" style="flex-direction: column; justify-content: center; align-items: center;">
+    <section id="contact" style="display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 100px 10%;">
     <div class="hero-text" style="text-align: center; max-width: 100%; margin-bottom: 40px;">
-        <h1>Get In <span>Touch</span></h1>
-        <p>Have a project in mind? Let's build something amazing together.</p>
+        <h1>Let's <span>Collaborate</span></h1>
+        <p>I'm currently available for freelance work and open-source projects.</p>
     </div>
 
-    <div class="card" style="width: 100%; max-width: 600px; padding: 40px;">
-        <form id="my-form" action="https://usebasin.com/f/57d645b6d6a1" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
-            
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label style="font-size: 0.85rem; color: var(--primary-blue);">Full Name</label>
-                <input type="text" name="name" placeholder="Enter your name" required 
-                    style="background: #1a1a1a; border: 1px solid #333; padding: 12px; border-radius: 5px; color: white; outline: none;">
-            </div>
+    <div class="card teaser-card" style="width: 100%; max-width: 700px; padding: 50px; text-align: center; background: var(--secondary-bg); border: 1px solid #222; border-radius: 15px; transition: 0.4s;">
+        
+        <div class="availability-tag" style="display: inline-flex; align-items: center; gap: 8px; background: rgba(0, 172, 238, 0.1); color: var(--primary-blue); padding: 8px 16px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; margin-bottom: 25px;">
+            <span style="width: 8px; height: 8px; background: #00ff88; border-radius: 50%; box-shadow: 0 0 10px #00ff88;"></span>
+            Available for New Projects
+        </div>
 
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label style="font-size: 0.85rem; color: var(--primary-blue);">Email Address</label>
-                <input type="email" name="email" placeholder="Enter your email" required 
-                    style="background: #1a1a1a; border: 1px solid #333; padding: 12px; border-radius: 5px; color: white; outline: none;">
-            </div>
+        <h2 style="font-size: 1.8rem; margin-bottom: 15px; color: white;">Ready to start your next big idea?</h2>
+        <p style="color: var(--text-gray); margin-bottom: 35px; line-height: 1.6;">
+            Whether you need a full-stack solution, a sleek UI/UX design, or a performance-optimized web app, I'm here to help you turn your vision into reality.
+        </p>
 
-            <div style="display: flex; flex-direction: column; gap: 8px;">
-                <label style="font-size: 0.85rem; color: var(--primary-blue);">Message</label>
-                <textarea name="message" rows="5" placeholder="How can I help you?" required 
-                    style="background: #1a1a1a; border: 1px solid #333; padding: 12px; border-radius: 5px; color: white; outline: none; resize: none;"></textarea>
-            </div>
-
-            <button type="submit" id="submit-btn" class="btn btn-fill" style="width: 100%; cursor: pointer; border: none;">
-                Send Message <i class="fas fa-paper-plane" style="margin-left: 10px;"></i>
-            </button>
-
-            <p id="form-status" style="text-align: center; font-size: 0.9rem; margin-top: 10px; display: none;"></p>
-        </form>
+        <div class="btn-group" style="justify-content: center;">
+            <a href="contact/" class="btn btn-fill">
+                Start a Conversation <i class="fas fa-arrow-right" style="margin-left: 10px;"></i>
+            </a>
+        </div>
     </div>
 </section>
+
 
 <footer style="padding: 20px 10%; border-top: 1px solid #1a1a1a; text-align: center;">
     <div style="display: flex; justify-content: center; align-items: center;">
