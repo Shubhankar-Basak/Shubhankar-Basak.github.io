@@ -575,3 +575,25 @@ nav {
         transform: scale(1.2);
     }
 }
+
+.teaser-card {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: default;
+}
+
+.teaser-card:hover {
+    transform: translateY(-12px);
+    border-color: var(--primary-blue) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 172, 238, 0.1);
+}
+
+/* Pulse animation for the availability dot */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.4; }
+    100% { opacity: 1; }
+}
+
+.availability-tag span {
+    animation: pulse 1s infinite;
+}
