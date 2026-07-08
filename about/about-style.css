@@ -151,3 +151,25 @@
         ::-webkit-scrollbar-track { background:#080808; }
         ::-webkit-scrollbar-thumb { background:var(--primary-blue); border-radius:10px; }
         ::selection { background:var(--primary-blue); color:#000; }
+
+       .profile-overview-card {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(26, 26, 26, 0.4);
+            border-left: 4px solid #007bff; /* Uses a fallback clean accent blue, fits any dark theme */
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            backdrop-filter: blur(5px);
+        }
+        .profile-overview-card h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .profile-overview-card p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #e0e0e0;
+            margin: 0;
+        }
