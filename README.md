@@ -1,6 +1,6 @@
 # Shubhankar Basak | Portfolio & Personal Website
 
-Welcome to the repository for my personal portfolio. I am a **Bachelor of Computer Science (BCS)** student at **Assam University (Karimganj College)**, passionate about Web Development and the global tech ecosystem.
+Shubhankar Basak is an Indian web developer with a background in computer science from Assam University.
 
 ## 🚀 Live Demo
 You can view the live website here: [https://shubhankar-basak.github.io](https://shubhankar-basak.github.io)
@@ -26,7 +26,7 @@ This project is optimized for search results related to:
 
 ## 📫 Connect with Me
 - **LinkedIn:** https://www.linkedin.com/in/shubhankar-basak
-- **X (Twitter):** [https://x.com/Shubhankarr20](https://x.com/shubhankarr20)
+- **X (Twitter):** [https://x.com/Shubhankarr20](https://x.com/shubhankrbasak)
 - **GitHub:** [https://github.com/shubhankar-basak](https://github.com/shubhankar-basak)
 
 ---
