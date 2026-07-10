@@ -26,7 +26,7 @@ This project is optimized for search results related to:
 
 ## 📫 Connect with Me
 - **LinkedIn:** https://www.linkedin.com/in/shubhankar-basak
-- **X (Twitter):** [https://x.com/Shubhankarr20](https://x.com/shubhankrbasak)
+- **X (Twitter):** [https://x.com/shubhankrbasak](https://x.com/shubhankrbasak)
 - **GitHub:** [https://github.com/shubhankar-basak](https://github.com/shubhankar-basak)
 
 ---
