@@ -365,46 +365,45 @@ input:focus, textarea:focus {
 /* Mobile Menu Media Query */
 @media (max-width: 768px) {
     nav {
-                background: transparent !important;
-                backdrop-filter: none !important;
-                -webkit-backdrop-filter: none !important;
-                border: none !important;
-                justify-content: flex-end;
-                padding: 20px 25px;
-                /* Spacing from the top-right corner */
-                pointer-events: none;
-                /* Allows clicks to pass through the empty nav area */
-            }
+        background: transparent !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        border: none !important;
+        justify-content: flex-end;
+        padding: 20px 25px;
+        pointer-events: none; /* Allows clicks to pass through empty nav areas */
+    }
 
-            /* Make only the menu button visible and clickable */
-            .menu-toggle {
-                display: flex;
-                pointer-events: auto;
-                margin-left: auto !important;
+    /* Make only the menu button visible and clickable */
+    .menu-toggle {
+        display: flex;
+        pointer-events: auto; /* Ensures button stays clickable */
+        margin-left: auto !important;
+        position: relative;
+        z-index: 1005; /* Keeps toggle button on top of drawer */
 
-                /* Liquid Glass UI Styling */
-                padding: 14px;
-                border-radius: 50%;
-                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
-                backdrop-filter: blur(12px) saturate(160%);
-                -webkit-backdrop-filter: blur(12px) saturate(160%);
-                border: 1px solid rgba(255, 255, 255, 0.15);
-                box-shadow:
-                    0 4px 30px rgba(0, 0, 0, 0.4),
-                    inset 0 1px 1px rgba(255, 255, 255, 0.2),
-                    inset 0 -2px 10px rgba(0, 172, 238, 0.1);
-                /* Subtle glowing liquid reflection */
-                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            }
+        /* Liquid Glass UI Styling */
+        padding: 14px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+        backdrop-filter: blur(12px) saturate(160%);
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow:
+            0 4px 30px rgba(0, 0, 0, 0.4),
+            inset 0 1px 1px rgba(255, 255, 255, 0.2),
+            inset 0 -2px 10px rgba(0, 172, 238, 0.1);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-            .menu-toggle:active {
-                transform: scale(0.92);
-                background: linear-gradient(135deg, rgba(0, 172, 238, 0.2), rgba(255, 255, 255, 0.05));
-                border-color: rgba(0, 172, 238, 0.4);
-                box-shadow:
-                    0 4px 20px rgba(0, 172, 238, 0.2),
-                    inset 0 1px 1px rgba(255, 255, 255, 0.3);
-            }
+    .menu-toggle:active {
+        transform: scale(0.92);
+        background: linear-gradient(135deg, rgba(0, 172, 238, 0.2), rgba(255, 255, 255, 0.05));
+        border-color: rgba(0, 172, 238, 0.4);
+        box-shadow:
+            0 4px 20px rgba(0, 172, 238, 0.2),
+            inset 0 1px 1px rgba(255, 255, 255, 0.3);
+    }
 
     .nav-links {
         position: fixed;
@@ -414,15 +413,19 @@ input:focus, textarea:focus {
         width: 70%;
         background: rgba(8, 8, 8, 0.98);
         backdrop-filter: blur(15px);
-        display: flex;
-        flex-direction: column;
+        display: flex !important; /* Overrides desktop hide rule */
+        flex-direction: column !important; /* Stacks mobile navigation items vertically */
         align-items: center;
         justify-content: center;
         gap: 30px;
         transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+        z-index: 1000; /* Positions drawer menu correctly layered beneath toggle */
+        pointer-events: auto !important; /* Enables link clicking inside drawer */
     }
 
-    .nav-links.active { right: 0; }
+    .nav-links.active { 
+        right: 0; 
+    }
 
     /* Animated X Bar */
     .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
@@ -434,6 +437,7 @@ input:focus, textarea:focus {
         font-size: 1.2rem;
         border-bottom: none !important; /* Remove desktop border */
         padding-bottom: 0 !important;
+        pointer-events: auto !important; /* Explicitly guarantees link clicks hit */
     }
 
     .nav-links a:hover {
