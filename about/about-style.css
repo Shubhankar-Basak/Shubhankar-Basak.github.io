@@ -13,7 +13,7 @@
             position:fixed; bottom:0; right:0; width:50%; height:80%;
         }
 
-        /* ── NAVIGATION ── */ 
+       /* ── NAVIGATION ── */ 
         nav {
             position:fixed; top:0; left:0; width:100%;
             background:rgba(8,8,8,0.85); backdrop-filter:blur(10px);
@@ -36,48 +36,132 @@
             padding-bottom:4px;
         }
 
-        /* Hamburger (only mobile) */
+        /* Hamburger Styles */
         .menu-toggle {
-            display:none;
-            flex-direction:column; gap:6px; cursor:pointer;
-            z-index:1002;
+            display: none; /* Hidden on desktop */
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            z-index: 1005; /* Keeps toggle button on top of drawer */
         }
+
         .bar {
-            width:28px; height:3px; background:var(--text-white);
-            border-radius:2px; transition:0.4s;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-white);
+            transition: 0.4s;
+            border-radius: 2px;
         }
 
-        /* ── MOBILE MENU ── */
-        @media (max-width:768px) {
-            .menu-toggle { display:flex; }
+        /* Mobile Menu Media Query */
+        @media (max-width: 768px) {
+            nav {
+                background: transparent !important;
+                backdrop-filter: none !important;
+                -webkit-backdrop-filter: none !important;
+                border: none !important;
+                justify-content: flex-end;
+                padding: 20px 25px;
+                pointer-events: none; /* Allows clicks to pass through empty nav areas */
+            }
+
+            /* Make only the menu button visible and clickable */
+            .menu-toggle {
+                display: flex;
+                pointer-events: auto; /* Ensures button stays clickable */
+                margin-left: auto !important;
+                position: relative;
+
+                /* Liquid Glass UI Styling */
+                padding: 14px;
+                border-radius: 50%;
+                background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
+                backdrop-filter: blur(12px) saturate(160%);
+                -webkit-backdrop-filter: blur(12px) saturate(160%);
+                border: 1px solid rgba(255, 255, 255, 0.15);
+                box-shadow:
+                    0 4px 30px rgba(0, 0, 0, 0.4),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+                    inset 0 -2px 10px rgba(0, 172, 238, 0.1);
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            }
+
+            .menu-toggle:active {
+                transform: scale(0.92);
+                background: linear-gradient(135deg, rgba(0, 172, 238, 0.2), rgba(255, 255, 255, 0.05));
+                border-color: rgba(0, 172, 238, 0.4);
+                box-shadow:
+                    0 4px 20px rgba(0, 172, 238, 0.2),
+                    inset 0 1px 1px rgba(255, 255, 255, 0.3);
+            }
+
             .nav-links {
-                position:fixed; top:0; right:-100%;
-                width:80%; height:100vh;
-                background:rgba(8,8,8,0.98); backdrop-filter:blur(12px);
-                flex-direction:column; align-items:center; justify-content:center;
-                gap:32px; transition:right 0.45s ease;
-                padding:80px 20px;
+                position: fixed;
+                top: 0;
+                right: -100%; /* Hidden by default */
+                height: 100vh;
+                width: 70%;
+                background: rgba(8, 8, 8, 0.98);
+                backdrop-filter: blur(15px);
+                display: flex !important; /* Overrides desktop hide rule */
+                flex-direction: column !important; /* Stacks items vertically */
+                align-items: center;
+                justify-content: center;
+                gap: 30px;
+                transition: 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+                z-index: 1000;
+                padding: 0; /* Reset default list spacing */
+                pointer-events: auto !important; /* Enables link clicking inside drawer */
             }
-            .nav-links.active { right:0; }
 
+            .nav-links.active { 
+                right: 0; 
+            }
+
+            /* Animated X Bar */
             .menu-toggle.active .bar:nth-child(1) { transform: translateY(9px) rotate(45deg); }
-    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+            .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+            .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
 
-            /* Social icons below menu links on mobile */
+            /* Mobile Text Hover: Blue and Underline only */
+            .nav-links a {
+                font-size: 1.2rem;
+                border-bottom: none !important; /* Remove desktop border */
+                padding-bottom: 0 !important;
+                pointer-events: auto !important; /* Explicitly guarantees link clicks hit */
+            }
+
+            .nav-links a:hover {
+                color: var(--primary-blue) !important;
+                text-decoration: underline;
+                text-underline-offset: 8px;
+            }
+
+            /* Notice: Matches your layout class name 'mobile-social' */
             .mobile-social {
-                margin-top:60px; display:flex; gap:40px;
+                display: flex;
+                justify-content: center;
+                margin-top: 40px;
+                gap: 30px;
+                pointer-events: auto !important; /* Explicitly guarantees social links are clickable */
             }
+
             .mobile-social a {
-                color:var(--text-gray); font-size:1.9rem;
-                transition:0.3s;
+                font-size: 1.8rem;
+                color: var(--text-gray);
+                transition: color 0.3s, transform 0.3s;
+                pointer-events: auto !important;
             }
-            .mobile-social a:hover { color:var(--primary-blue); transform:scale(1.15); }
+
+            .mobile-social a:hover {
+                color: var(--primary-blue);
+                transform: scale(1.2);
+            }
         }
 
-        /* ── DESKTOP: hide social icons ── */
-        @media (min-width:769px) {
-            .mobile-social { display:none; }
+        /* Hide mobile social view on desktop layout */
+        @media (min-width: 769px) {
+            .mobile-social { display: none; }
         }
 
         /* ── OTHER STYLES (unchanged from previous) ── */
