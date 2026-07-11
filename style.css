@@ -383,7 +383,7 @@ input:focus, textarea:focus {
                 margin-left: auto !important;
 
                 /* Liquid Glass UI Styling */
-                padding: 12px;
+                padding: 14px;
                 border-radius: 50%;
                 background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.03));
                 backdrop-filter: blur(12px) saturate(160%);
