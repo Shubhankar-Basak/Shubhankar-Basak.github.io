@@ -87,6 +87,13 @@
             color: var(--primary-blue);
         }
 
+        /* Hide the main floating sidebar completely on mobile screens */
+        @media (max-width: 992px) {
+            .sidebar {
+                display: none !important;
+            }
+        }
+
         /* Sections Styling */
         section {
             display: flex;
