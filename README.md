@@ -8,7 +8,7 @@ You can view the live website here: [https://shubhankar-basak.github.io](https:/
 ## 📍 About Me
 * **Name:** Shubhankar Basak
 * **Education:** BCS Student at Assam University
-* **Location:** Sribhumi (Karimganj), Assam, India
+* **Location:** Assam, India
 * **Interests:** Full-stack Development, API Integration, and Community Building.
 * **Community:** Active member of **GDG NIT Silchar** and **Microsoft Learn Student Ambassador (MLSA)** applicant.
 
