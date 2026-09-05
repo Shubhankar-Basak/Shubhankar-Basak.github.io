@@ -25,7 +25,10 @@
     <meta name="twitter:description" content="Web developer, CS student at Assam University, open-source contributor. Based in Assam.">
     <meta name="twitter:image" content="https://shubhankar-basak.github.io/Images/Shubhankar-Basak-as-Web-Developer.jpg">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <link rel="stylesheet" href="about-style.css">
@@ -34,34 +37,86 @@
 
     <div class="bg-accent"></div>
 
+    <!-- =========================================================
+         HEADER
+         SAME STRUCTURE AS PROJECTS PAGE
+    ========================================================== -->
+
     <nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
 
-        <div class="nav-links">
-            <a href="../">Home</a>
-            <a href="/about" class="active">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#project">Project</a>
-            <a href="#testimonials">Testimonials</a>
-            <a href="/contact/">Contact</a>
+        <ul class="nav-links">
 
-            <!-- Social icons - only visible in mobile menu -->
+            <li>
+                <a href="../">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="/about/" class="active">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="#skills">
+                    Skills
+                </a>
+            </li>
+
+            <li>
+                <a href="/projects/">
+                    Project
+                </a>
+            </li>
+
+            <li>
+                <a href="#testimonials">
+                    Testimonials
+                </a>
+            </li>
+
+            <li>
+                <a href="/contact/">
+                    Contact
+                </a>
+            </li>
+
             <div class="mobile-social">
-                <a href="https://github.com/Shubhankar-Basak" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/shubhankar-basak" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://x.com/shubhankrbasak" target="_blank"><i class="fab fa-x-twitter"></i></a>
+
+                <a href="https://github.com/Shubhankar-Basak" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+
+                <a href="https://www.linkedin.com/in/shubhankar-basak" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+
+                <a href="https://x.com/shubhankrbasak" target="_blank">
+                    <i class="fab fa-x-twitter"></i>
+                </a>
+
             </div>
+
+        </ul>
+
+        <div
+            class="menu-toggle"
+            id="mobile-menu"
+            aria-label="Open menu"
+            role="button"
+            tabindex="0"
+        >
+            <span class="bar"></span>
+            <span class="bar"></span>
         </div>
+
     </nav>
 
     <!-- About Section -->
     <section id="about" style="padding-top: 50px;">
         
-    <!-- VISIBLE OVERVIEW BOX DESIGNED FOR CRAWLERS AND READERS -->
+        <!-- VISIBLE OVERVIEW BOX DESIGNED FOR CRAWLERS AND READERS -->
         <div class="profile-overview-card">
             <p>Shubhankar Basak is an Indian web developer with a background in computer science from Assam University. He specializes in building scalable full-stack web applications with a strong focus on search engine optimization (SEO). His work centers on engineering production-ready utilities, modern frameworks, and supporting open-source documentation and community-driven technology initiatives.</p>
         </div>
@@ -160,13 +215,13 @@
     </section>
 
     <footer style="padding: 20px 10%; border-top: 1px solid #1a1a1a; text-align: center;">
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <div style="color: var(--text-gray); font-size: 0.85rem;">
-            <p>&copy; 2026 <a href="https://shubhankar-basak.github.io/" style="color: var(--primary-blue); font-weight: 600; text-decoration: none;">Shubhankar Basak</a>. All rights reserved.</p>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div style="color: var(--text-gray); font-size: 0.85rem;">
+                <p>&copy; 2026 <a href="https://shubhankar-basak.github.io/" style="color: var(--primary-blue); font-weight: 600; text-decoration: none;">Shubhankar Basak</a>. All rights reserved.</p>
+            </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-   <script src="about-script.js"></script>
+    <script src="about-script.js"></script>
 </body>
 </html>
