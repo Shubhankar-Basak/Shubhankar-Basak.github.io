@@ -1,12 +1,11 @@
-// FIXED ID here to match HTML
-        const contactForm = document.getElementById("contact-form");
+const contactForm = document.getElementById("contact-form");
         const formStatus = document.getElementById("form-status");
 
         async function handleFormSubmit(event) {
-            event.preventDefault(); 
+            event.preventDefault();
             const data = new FormData(event.target);
             const submitBtn = document.getElementById("submit-btn");
-            
+
             formStatus.style.display = "block";
             formStatus.style.opacity = "1";
             formStatus.style.color = "var(--text-gray)";
@@ -16,12 +15,14 @@
             fetch(event.target.action, {
                 method: contactForm.method,
                 body: data,
-                headers: { 'Accept': 'application/json' }
+                headers: {
+                    'Accept': 'application/json'
+                }
             }).then(response => {
                 if (response.ok) {
                     formStatus.innerText = "Thanks! Your message has been sent.";
-                    formStatus.style.color = "var(--primary-blue)"; 
-                    contactForm.reset(); 
+                    formStatus.style.color = "var(--primary-blue)";
+                    contactForm.reset();
                 } else {
                     formStatus.innerText = "Oops! Something went wrong.";
                     formStatus.style.color = "var(--error-red)";
@@ -34,8 +35,10 @@
                 setTimeout(() => {
                     formStatus.style.transition = "opacity 1s ease";
                     formStatus.style.opacity = "0";
-                    setTimeout(() => { formStatus.style.display = "none"; }, 1000); 
-                }, 5000); 
+                    setTimeout(() => {
+                        formStatus.style.display = "none";
+                    }, 1000);
+                }, 5000);
             });
         }
 
