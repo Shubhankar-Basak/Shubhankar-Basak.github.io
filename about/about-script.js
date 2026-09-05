@@ -1,19 +1,25 @@
-// Active link highlight
-        const navLinks = document.querySelectorAll('.nav-links a');
+const navLinks = document.querySelectorAll('.nav-links a');
+
         window.addEventListener('scroll', () => {
             let current = "";
+
             document.querySelectorAll('section').forEach(sec => {
                 if (pageYOffset >= sec.offsetTop - 160) current = sec.id;
             });
+
             navLinks.forEach(link => {
                 link.classList.remove('active');
-                if (link.getAttribute('href').slice(1) === current) link.classList.add('active');
+
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
             });
         });
 
         // Hamburger toggle
         const menuToggle = document.querySelector('#mobile-menu');
         const navContainer = document.querySelector('.nav-links');
+
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             navContainer.classList.toggle('active');
